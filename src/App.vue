@@ -13,7 +13,7 @@ defineProps({
 
 const isMenuOpen = ref(false);
 const searchQuery = ref('');
-const searchResults = ref([]);
+const searchResults =  ref<User[]>([]);
 const router = useRouter();
 
 const toggleMenu = () => {

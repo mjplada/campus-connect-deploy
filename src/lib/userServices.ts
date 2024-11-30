@@ -2,7 +2,7 @@ import { ref } from 'vue';
 import { supabase } from './supabaseClient';
 import { useRouter, type Router } from 'vue-router';
 
-export const user = ref(null);
+export const user = ref<User | null>(null);
 export const userProfile = ref({
   firstName: '',
   profile_picture: '',
@@ -32,7 +32,13 @@ export const fetchInitialUser = async () => {
       if (profileError) throw profileError;
 
       const [firstName] = profile.full_name.split(' ');
-      user.value = { id, email, username: profile.username, fullName: profile.full_name };
+      user.value = {
+        id: id,
+        email: email ?? "email-desconocido@example.com",
+        username: profile.username,
+        full_name: profile.full_name ?? "Nombre desconocido",
+        profile_picture: profile.profile_picture ?? "sin foto",
+      };
       userProfile.value = { firstName, profile_picture: '' };
 
       if (profile.profile_picture) {

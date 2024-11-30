@@ -66,8 +66,8 @@ router.beforeEach(async (to, from, next) => {
     }
 
     if (user.value) {
-      const { username, fullName } = user.value;
-      const isProfileComplete = username && fullName;
+      const { username, full_name } = user.value;
+      const isProfileComplete = username && full_name;
 
       if (!isProfileComplete && to.path !== '/complete-profile') {
         console.log('Perfil incompleto. Redirigiendo a completar perfil.');

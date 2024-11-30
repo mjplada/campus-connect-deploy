@@ -33,7 +33,7 @@ const saveProfile = async () => {
     const { data: user, error: authError } = await supabase.auth.getUser();
     if (authError || !user) throw new Error('No estás autenticado.');
 
-    const userId = user.id;
+    const userId = user.user?.id;
 
     let profilePictureUrl = null;
 
