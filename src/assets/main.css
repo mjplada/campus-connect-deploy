@@ -1,0 +1,47 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+  display: flex; /* Cambia a Flexbox */
+  flex-direction: column; /* Los elementos se apilan verticalmente */
+  justify-content: flex-start; /* Alinea al inicio vertical */
+  align-items: center; /* Centra horizontalmente */
+  height: 100%; /* Ajusta para ocupar el espacio disponible */
+  min-height: 100vh; /* Asegura que ocupe al menos todo el viewport */
+  box-sizing: border-box;
+}
+
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Ocupa toda la altura del viewport */
+    margin: 0;
+  }
+
+  #app {
+    display: flex; /* Asegura Flexbox */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    padding: 0 2rem;
+  }
+}
+
